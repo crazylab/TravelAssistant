@@ -1,4 +1,5 @@
 from flask import Flask, request, Response
+import os
 
 app = Flask(__name__.split('.')[0])
 
@@ -12,8 +13,8 @@ def index():
 
 
 # Setup of validation tokens are needed here
-VALIDATION_TOKEN = 'This_is_the_validation_token'
-PAGE_TOKEN = 'set_the_page_token_here'
+VALIDATION_TOKEN = os.environ.get("VALIDATION_TOKEN")
+PAGE_TOKEN = os.environ.get("PAGE_TOKEN")
 
 
 @app.route('/webhook', methods=['GET'])
