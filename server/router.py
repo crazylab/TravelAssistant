@@ -3,13 +3,11 @@ import os
 
 app = Flask(__name__.split('.')[0])
 
-PORT = 8080
-
 
 @app.route('/', methods=['GET'])
 @app.route('/index', methods=['GET'])
 def index():
-    return 'Server is running on port %s' % str(PORT)
+    return 'Server is running on port'
 
 
 # Setup of validation tokens are needed here
@@ -65,4 +63,4 @@ def receive_message():
     return Response(status=200)
 
 
-app.run(debug=True, port=PORT)
+app.run(debug=True)
