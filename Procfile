@@ -1,1 +1,1 @@
-web: python router.py
+web: python server/router.py
